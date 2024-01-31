@@ -9,3 +9,8 @@ Network File System (NFS) is mechanism for shared storage files. There are two s
 ✦ Setup
 
 ✦ Configuration
+
+#### Install NFS Kernel Server
+```
+sudo apt-get update && sudo apt-get install nfs-kernel-server
+```
