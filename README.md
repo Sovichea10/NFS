@@ -3,3 +3,8 @@ Network File System (NFS) is mechanism for shared storage files. There are two s
 
 - NfS Server
 - NFS Client
+
+### NFS Server
+
+- Setup
+- Configuration
