@@ -37,3 +37,15 @@ sudo mkdir /exports/shared/log_manager/cache
 /exports/shared/log_manager/sessions 172.xx.xx.00(rw,no_subtree_check) 172.xx.xx.01(rw,no_subtree_check)
 /exports/shared/log_manager/cache 172.xx.xx.00(rw,no_subtree_check) 172.xx.xx.01(rw,no_subtree_check)
 ```
+
+#### Restart NFS Kernel Server
+```
+sudo systemctl restart nfs-kernel-server
+```
+##
+### ➤ NFS Client
+
+✦ Setup
+
+✦ Mounts
+
