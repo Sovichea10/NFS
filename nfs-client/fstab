@@ -1,0 +1,3 @@
+#========== - Log Management Project
+<IP_NFS_SERVER>:/exports/shared/log_manager/sessions   /mnt/nfs/<your_project_name>/sessions   nfs   rw,relatime,acl    0 1
+<IP_NFS_SERVER>:/exports/shared/log_manager/cache   /mnt/nfs/<your_project_name>/cache   nfs   rw,relatime,acl    0 1
