@@ -89,7 +89,7 @@ umount /mnt/nfs/<your_project_name>/sessions && /mnt/nfs/<your_project_name>/cac
 ```
 sudo nano /etc/fstab
 ```
-Content of File
+Content of File 👇
 ```
 #============= Log Management Project
 <IP_NFS_SERVER>:/exports/shared/log_manager/sessions   /mnt/nfs/<your_project_name>/sessions   nfs   rw,relatime,acl    0 1
