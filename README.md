@@ -10,35 +10,35 @@ Network File System (NFS) is mechanism for shared storage files. There are two s
 
 ✦ Configuration
 
-#### Install NFS Kernel Server
+#### 🔵 Install NFS Kernel Server
 ```
 sudo apt-get update && sudo apt-get install nfs-kernel-server
 ```
 
-#### Check NFS Kernel Server Status
+#### 🔵 Check NFS Kernel Server Status
 ```
 sudo systemctl status nfs-kernel-server
 ```
 
-#### After installed, there's default directory /etc/exports. Rename file and Create a new one
+#### 🔵 After installed, there's default directory /etc/exports. Rename file and Create a new one
 ```
 sudo mv /etc/exports /etc/exports.original
 ```
 
-#### Create directory you gonna export. Below is example:
+#### 🔵 Create directory you gonna export. Below is example:
 ```
 sudo mkdir /exports/shared/log_manager/sessions
 sudo mkdir /exports/shared/log_manager/cache
 ```
 
-#### New file "/etc/exports" look like this - Configuration
+#### 🔵 New file "/etc/exports" look like this - Configuration
 ```
 #========== - Log Management Project - White list IP Address Client
 /exports/shared/log_manager/sessions 172.xx.xx.00(rw,no_subtree_check) 172.xx.xx.01(rw,no_subtree_check)
 /exports/shared/log_manager/cache 172.xx.xx.00(rw,no_subtree_check) 172.xx.xx.01(rw,no_subtree_check)
 ```
 
-#### Restart NFS Kernel Server
+#### 🔵 Restart NFS Kernel Server
 ```
 sudo systemctl restart nfs-kernel-server
 ```
@@ -49,43 +49,43 @@ sudo systemctl restart nfs-kernel-server
 
 ✦ Mounts
 
-#### Install NFS Client (Your Client Server) - Ubuntu or Debian
+#### 🔵 Install NFS Client (Your Client Server) - Ubuntu or Debian
 ```
 sudo apt-get update && apt-get install nfs-common
 ```
 
-#### Showmount export of Server - Export List
+#### 🔵 Showmount export of Server - Export List
 ```
 showmount --exports <IP_NFS_SERVER>
 ```
-#### *Note: Have to improve Security or prevent risky when use nfs to export list directory*
+#### ✍️ *Note: Have to improve Security or prevent risky when use nfs to export list directory*
 
-#### Create mount directory for Client. Example below
+#### 🔵 Create mount directory for Client. Example below
 ```
 sudo mkdir /mnt/nfs/<your_project_name>/sessions
 sudo mkdir /mnt/nfs/<your_project_name>/cache
 ```
 
-#### Manually mounting an NFS Share/export - Based on Export List
+#### 🔵 Manually mounting an NFS Share/export - Based on Export List
 ```
 sudo mount <IP_NFS_SERVER>:/exports/shared/log_manager/sessions /mnt/nfs/<your_project_name>/sessions
 sudo mount <IP_NFS_SERVER>:/exports/shared/log_manager/cache /mnt/nfs/<your_project_name>/cache
 ```
-#### *This way could keep configuration temporarily. After rebooting server, it's all reset.*
+#### ✍️ *This way could keep configuration temporarily. After rebooting server, it's all reset.*
 
-#### Verify Mounting
+#### 🔵 Verify Mounting
 ```
 sudo df -h
 cat /mnt/nfs/<your_project_name>/sessions
 cat /mnt/nfs/<your_project_name>/cache
 ```
 
-#### *If no longer needed, umount them*
+#### ✍️ *If no longer needed, umount them*
 ```
 umount /mnt/nfs/<your_project_name>/sessions && /mnt/nfs/<your_project_name>/cache
 ```
 
-#### This is good practice to automatically mount NFS Share/export and keep permanently
+#### 🔵 This is good practice to automatically mount NFS Share/export and keep permanently
 ```
 sudo nano /etc/fstab
 ```
@@ -96,7 +96,7 @@ Content of File 👇
 <IP_NFS_SERVER>:/exports/shared/log_manager/cache   /mnt/nfs/<your_project_name>/cache   nfs   rw,relatime,acl    0 1
 ```
 
-#### Run mount command
+#### 🔵 Run mount command
 ```
 sudo mount -a
 ```
