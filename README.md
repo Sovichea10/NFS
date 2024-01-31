@@ -101,5 +101,6 @@ Content of File
 sudo mount -a
 ```
 ##
-<h3>It's all done. Please follow this guide</h3>
+<h3>☑️It's all done. Please follow this guide👆</h3>
+
 ##
